@@ -1,0 +1,47 @@
+
+<%if user_signed_in? %>
+<br/>
+<table class="table table-bordered  table-hover">
+  <thead >
+    <tr class="table-info">
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th>User Id</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+<div id="friends">
+  <% @friends.each do |friend| %>
+  <%if friend.user == current_user %>
+    <tr class="table-primary" >
+      <th><%=link_to friend.to_s, friend_path(friend) %></th>
+      <th><%= friend.email %></th>
+      <th><%= friend.phone %></th>
+      <th><%= friend.twitter %></th>
+      <th><%= friend.user_id %></th>
+      <th><%= link_to "Delete", friend, method: :delete , data:{ confirm: "are you sure" },class: "btn btn-outline-danger btn-sm"%></th>
+    
+    </tr>
+    <% end %>
+    <% render friend %>
+    
+
+  <% end %>
+  <p>
+      
+  </p>
+
+</div>
+</tbody>
+</table>
+<br/>
+<%= link_to "New friend", new_friend_path ,class:"btn btn-outline-primary"%>
+
+<%else%>
+  <%= render 'layouts/index'%>
+
+<%end%>

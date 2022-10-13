@@ -1,0 +1,33 @@
+
+<% render @friend %>
+<br/>
+
+<div>
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%= @friend.to_s %></h1>
+    <br/>
+      <hr class="my-4">
+
+    <p class="lead"><%= @friend.email %></p>
+     <p class="lead"> <%= @friend.phone %></p>
+      <p class="lead">     <%= @friend.twitter %>
+    </p>
+
+  </div>
+  <div>
+  <%= link_to "Edit this friend", edit_friend_path(@friend),class: "btn btn-outline-secondary" %> |
+  <%= link_to "Back to friends", friends_path , class: "btn btn-outline-dark"%>
+
+  </div>
+  <br/>
+    <%= button_to "Destroy this friend", @friend, method: :delete , notice: "are you sure",class: "btn  btn-outline-danger"%>
+
+</div>
+
+</div>
+
+
+
+
+

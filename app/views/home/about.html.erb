@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+
+    <div>
+    	<div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">Add your friends details now!!</h1>
+        <p class="lead">This Website is build to add your friends details ..any one can use to add friends to their accounts ..You acn also Add the personal information of your friend like contact number,email,twitter.Keep it private using the authentication </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <%= link_to "Sign up", new_user_registration_path(@resource_name) ,class:"btn  btn-outline-primary" %> | 
+        <%= link_to "Log in", user_session_path(@resource_name) ,class:"btn btn-outline-dark"%><br />
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+           <%= image_tag "2.jpg", height: 300 %>
+
+      </div>
+    </div>
+  </div>
+
+    </div>
+</div>
+</body>
+</html>
